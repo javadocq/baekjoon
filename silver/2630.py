@@ -62,14 +62,15 @@ def solution():
 
         if same:
             if square_list[x][y] == 1:
-                blue += 1
+                blue += 1 # 파란색 박스 + 1
             else:
-                white += 1
+                white += 1 # 하얀색 박스 + 1
             
             return 
 
+        # 이후 same == False이면 4등분 로직 실행
         size = size // 2
-        cut(x, y, size)
+        cut(x, y, size) 
         cut(x + size, y, size)
         cut(x, y + size, size)
         cut(x + size, y + size, size)
