@@ -52,10 +52,10 @@ def solution():
         if number == 0:
             if heap:
                 temp_number = heapq.heappop(heap)
-                print(-temp_number)
+                print(temp_number)
             else:
                 print(0)
         else:
-            heapq.heappush(heap, -number)
+            heapq.heappush(heap, number)
     
 solution()
