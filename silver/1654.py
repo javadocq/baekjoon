@@ -40,11 +40,11 @@ def solution(n,m,li):
         for x in li:
             cnt += x // mid
 
-            if cnt >= m:
-                answer = mid
-                left = mid + 1
-            else:
-                right = mid - 1
+        if cnt >= m:
+            answer = mid
+            left = mid + 1
+        else:
+            right = mid - 1
 
     print(answer)
         
