@@ -24,9 +24,13 @@ input = sys.stdin.readline
 sys.setrecursionlimit(10**7)
 
 def fac(n):
+    if dp[n] != None:
+        return dp[n]
     if n == 1:
         return 1
-    return n * fac(n-1)
+    else:
+        dp[n] = n * fac(n-1)
+        return dp[n]
 
 def solution(n):
     answer = 0
@@ -40,4 +44,7 @@ def solution(n):
             return
 
 n = int(input())
+
+dp = [None] * (n+1)
+dp[0] = 1
 solution(n)
