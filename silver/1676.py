@@ -1,0 +1,43 @@
+# 팩토리얼 0의 개수
+# 시간 제한	메모리 제한	제출	정답	맞힌 사람	정답 비율
+# 2 초	128 MB	110848	51889	43632	46.283%
+# 문제
+# N!에서 뒤에서부터 처음 0이 아닌 숫자가 나올 때까지 0의 개수를 구하는 프로그램을 작성하시오.
+
+# 입력
+# 첫째 줄에 N이 주어진다. (0 ≤ N ≤ 500)
+
+# 출력
+# 첫째 줄에 구한 0의 개수를 출력한다.
+
+# 예제 입력 1 
+# 10
+# 예제 출력 1 
+# 2
+# 예제 입력 2 
+# 3
+# 예제 출력 2 
+# 0
+
+import sys
+input = sys.stdin.readline
+sys.setrecursionlimit(10**7)
+
+def fac(n):
+    if n == 1:
+        return 1
+    return n * fac(n-1)
+
+def solution(n):
+    answer = 0
+    number = str(fac(n))
+
+    for i in range(len(number)-1, -1, -1):
+        if number[i] == '0':
+            answer += 1
+        else:
+            print(answer)
+            return
+
+n = int(input())
+solution(n)
