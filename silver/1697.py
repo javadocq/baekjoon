@@ -27,8 +27,8 @@ def solution(n, k):
     max_pos = 100000
     dist = [-1] * (max_pos + 1)
 
-    queue = deque([n])
     dist[n] = 0
+    queue = deque([n])
 
     while queue:
         curr = queue.popleft()
@@ -36,11 +36,12 @@ def solution(n, k):
         if curr == k:
             print(dist[curr])
             return
-
-        for next_pos in (curr - 1, curr + 1, curr * 2):
+        
+        for next_pos in (curr-1, curr+1, curr*2):
             if 0 <= next_pos <= max_pos and dist[next_pos] == -1:
                 dist[next_pos] = dist[curr] + 1
                 queue.append(next_pos)
+
 
 n, k = map(int, input().split())
 solution(n, k)
